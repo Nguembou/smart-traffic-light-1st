@@ -54,7 +54,7 @@ input.onButtonPressed(Button.AB, function () {
 	
 })
 input.onButtonPressed(Button.B, function () {
-    music.playTone(784, music.beat(BeatFraction.Whole))
+    music.playTone(831, music.beat(BeatFraction.Whole))
     for (let index = 0; index < 9; index++) {
         counter += -1
         basic.pause(500)
@@ -73,12 +73,12 @@ input.onButtonPressed(Button.B, function () {
     }
     counter = 10
     for (let index = 0; index < 9; index++) {
-        music.playTone(659, music.beat(BeatFraction.Whole))
+        music.playTone(698, music.beat(BeatFraction.Whole))
         counter += -1
         basic.showNumber(counter)
         basic.pause(500)
         if (counter == 1) {
-            music.playTone(587, music.beat(BeatFraction.Whole))
+            music.playTone(831, music.beat(BeatFraction.Whole))
             basic.showLeds(`
                 . # # # .
                 # # . . #
@@ -112,7 +112,7 @@ basic.showLeds(`
     # . . # #
     . # # # .
     `)
-strip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P0, 3, NeoPixelMode.RGB)
 strip.setBrightness(90)
 RED()
 counter = 9
