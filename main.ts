@@ -19,7 +19,7 @@ input.onButtonPressed(Button.A, function () {
         counter += -1
         basic.showNumber(counter)
         basic.pause(500)
-        if ((0 as any) == (1 as any)) {
+        if (counter == 1) {
             basic.showLeds(`
                 . # # # .
                 # # . . #
@@ -73,10 +73,12 @@ input.onButtonPressed(Button.B, function () {
     }
     counter = 10
     for (let index = 0; index < 9; index++) {
+        music.playTone(659, music.beat(BeatFraction.Whole))
         counter += -1
         basic.showNumber(counter)
         basic.pause(500)
-        if ((0 as any) == (1 as any)) {
+        if (counter == 1) {
+            music.playTone(587, music.beat(BeatFraction.Whole))
             basic.showLeds(`
                 . # # # .
                 # # . . #
