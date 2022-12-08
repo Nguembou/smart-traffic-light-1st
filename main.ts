@@ -105,6 +105,7 @@ let distance = 0
 let range: neopixel.Strip = null
 let counter = 0
 let strip: neopixel.Strip = null
+radio.setGroup(79)
 basic.showLeds(`
     . # # # .
     # # . . #
