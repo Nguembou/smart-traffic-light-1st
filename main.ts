@@ -1,3 +1,10 @@
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber == 4) {
+        GREEN()
+    } else if (receivedNumber == 6) {
+        RED()
+    }
+})
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 9; index++) {
         counter += -1
@@ -113,7 +120,7 @@ basic.showLeds(`
     # . . # #
     . # # # .
     `)
-strip = neopixel.create(DigitalPin.P0, 3, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB)
 strip.setBrightness(90)
 RED()
 counter = 9

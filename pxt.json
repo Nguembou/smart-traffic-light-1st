@@ -1,5 +1,5 @@
 {
-    "name": "smart traffic light 1st",
+    "name": "smart traffic light 1",
     "description": "",
     "dependencies": {
         "core": "*",
