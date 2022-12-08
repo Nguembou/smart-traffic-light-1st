@@ -73,8 +73,8 @@ input.onButtonPressed(Button.B, function () {
     }
     counter = 10
     for (let index = 0; index < 9; index++) {
-        music.playTone(698, music.beat(BeatFraction.Whole))
         counter += -1
+        music.playTone(698, music.beat(BeatFraction.Whole))
         basic.showNumber(counter)
         basic.pause(500)
         if (counter == 1) {
