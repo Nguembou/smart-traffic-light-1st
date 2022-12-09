@@ -100,6 +100,23 @@ input.onButtonPressed(Button.B, function () {
     }
     counter = 9
 })
+function sensor () {
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    control.waitMicros(2)
+    pins.digitalWritePin(DigitalPin.P1, 1)
+    control.waitMicros(10)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    distance = pins.pulseIn(DigitalPin.P0, PulseValue.High) / 58
+    basic.pause(2000)
+    if (distance < 5) {
+        sensor()
+        GREEN()
+        basic.pause(11000)
+        ORANGE()
+        basic.pause(500)
+        RED()
+    }
+}
 function ORANGE () {
     range = strip.range(1, 1)
     range.showColor(neopixel.colors(NeoPixelColors.Orange))
@@ -125,14 +142,5 @@ strip.setBrightness(90)
 RED()
 counter = 9
 basic.forever(function () {
-    pins.digitalWritePin(DigitalPin.P1, 0)
-    control.waitMicros(2)
-    pins.digitalWritePin(DigitalPin.P1, 1)
-    control.waitMicros(10)
-    pins.digitalWritePin(DigitalPin.P1, 0)
-    distance = pins.pulseIn(DigitalPin.P0, PulseValue.High) / 58
-    basic.pause(2000)
-    if (distance == 0) {
-    	
-    }
+	
 })
