@@ -35,7 +35,7 @@ input.onButtonPressed(Button.A, function () {
                 . # # # .
                 `)
             ORANGE()
-            basic.pause(500)
+            basic.pause(1000)
             RED()
         }
     }
@@ -94,7 +94,7 @@ input.onButtonPressed(Button.B, function () {
                 . # # # .
                 `)
             ORANGE()
-            basic.pause(500)
+            basic.pause(1000)
             RED()
         }
     }
@@ -108,14 +108,6 @@ function sensor () {
     pins.digitalWritePin(DigitalPin.P1, 0)
     distance = pins.pulseIn(DigitalPin.P0, PulseValue.High) / 58
     basic.pause(2000)
-    if (distance < 5) {
-        sensor()
-        GREEN()
-        basic.pause(11000)
-        ORANGE()
-        basic.pause(500)
-        RED()
-    }
 }
 function ORANGE () {
     range = strip.range(1, 1)
