@@ -35,7 +35,7 @@ input.onButtonPressed(Button.A, function () {
                 . # # # .
                 `)
             ORANGE()
-            basic.pause(1000)
+            basic.pause(2000)
             RED()
         }
     }
@@ -57,9 +57,6 @@ function GREEN () {
     range = strip.range(0, 1)
     range.showColor(neopixel.colors(NeoPixelColors.Black))
 }
-input.onButtonPressed(Button.AB, function () {
-	
-})
 input.onButtonPressed(Button.B, function () {
     music.playTone(831, music.beat(BeatFraction.Whole))
     for (let index = 0; index < 9; index++) {
@@ -94,20 +91,14 @@ input.onButtonPressed(Button.B, function () {
                 . # # # .
                 `)
             ORANGE()
-            basic.pause(1000)
+            basic.pause(2000)
             RED()
         }
     }
     counter = 9
 })
 function sensor () {
-    pins.digitalWritePin(DigitalPin.P1, 0)
-    control.waitMicros(2)
-    pins.digitalWritePin(DigitalPin.P1, 1)
-    control.waitMicros(10)
-    pins.digitalWritePin(DigitalPin.P1, 0)
-    distance = pins.pulseIn(DigitalPin.P0, PulseValue.High) / 58
-    basic.pause(2000)
+	
 }
 function ORANGE () {
     range = strip.range(1, 1)
@@ -117,7 +108,6 @@ function ORANGE () {
     range = strip.range(0, 1)
     range.showColor(neopixel.colors(NeoPixelColors.Black))
 }
-let distance = 0
 let range: neopixel.Strip = null
 let counter = 0
 let strip: neopixel.Strip = null
