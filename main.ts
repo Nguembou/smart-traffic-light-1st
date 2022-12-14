@@ -63,7 +63,7 @@ input.onButtonPressed(Button.B, function () {
         counter += -1
         basic.pause(500)
         if (counter == 0) {
-            music.playTone(698, music.beat(BeatFraction.Whole))
+            music.playTone(659, music.beat(BeatFraction.Double))
             basic.showLeds(`
                 . . # . .
                 # # # # #
@@ -81,8 +81,11 @@ input.onButtonPressed(Button.B, function () {
         music.playTone(698, music.beat(BeatFraction.Whole))
         basic.showNumber(counter)
         basic.pause(500)
+        if (counter == 6) {
+            music.changeTempoBy(400)
+        }
         if (counter == 1) {
-            music.playTone(831, music.beat(BeatFraction.Whole))
+            music.playTone(831, music.beat(BeatFraction.Double))
             basic.showLeds(`
                 . # # # .
                 # # . . #
