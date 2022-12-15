@@ -2,6 +2,8 @@ radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 4) {
         GREEN()
     } else if (receivedNumber == 6) {
+        ORANGE()
+        basic.pause(2000)
         RED()
     }
 })
@@ -96,13 +98,11 @@ input.onButtonPressed(Button.B, function () {
             ORANGE()
             basic.pause(2000)
             RED()
+            music.setTempo(120)
         }
     }
     counter = 9
 })
-function sensor () {
-	
-}
 function ORANGE () {
     range = strip.range(1, 1)
     range.showColor(neopixel.colors(NeoPixelColors.Orange))
@@ -111,6 +111,7 @@ function ORANGE () {
     range = strip.range(0, 1)
     range.showColor(neopixel.colors(NeoPixelColors.Black))
 }
+let distance = 0
 let range: neopixel.Strip = null
 let counter = 0
 let strip: neopixel.Strip = null
@@ -127,5 +128,18 @@ strip.setBrightness(90)
 RED()
 counter = 9
 basic.forever(function () {
-	
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    control.waitMicros(2)
+    pins.digitalWritePin(DigitalPin.P1, 1)
+    control.waitMicros(10)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    distance = pins.pulseIn(DigitalPin.P2, PulseValue.High) / 58
+    basic.pause(2000)
+    if (distance < 5) {
+        GREEN()
+        basic.pause(11000)
+        ORANGE()
+        basic.pause(2000)
+        RED()
+    }
 })
